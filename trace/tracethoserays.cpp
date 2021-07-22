@@ -10,7 +10,7 @@ int main(int argc, const char **argv) {
   int heightInPixels = 430;
   int widthInPixels = 575;
   std::string nameForImage = "reloaded.png";
-  std::string test;
+  std::string povFile;
 
   // Required for Lyra to provide help.
   bool show_help = false;
@@ -23,7 +23,8 @@ int main(int argc, const char **argv) {
              lyra::opt(nameForImage, "name")["-n"]["--name"](
                  "Name the beautiful image that will bring light and color to "
                  "your life. (Default to reloaded.png)") |
-             lyra::opt(test, "test")["-t"]["--test"]("Test this thang!");
+             lyra::opt(povFile, "pov")["-p"]["--pov"](
+                 "The .pov file to generate the image.");
 
   auto result = cli.parse({argc, argv});
   if (!result) {
