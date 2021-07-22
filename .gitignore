@@ -1,2 +1,3 @@
 # Don't track these directories
+.DS_Store
 trace_cmake/
